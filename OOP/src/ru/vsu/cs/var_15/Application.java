@@ -55,6 +55,19 @@ public class Application {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Application that = (Application) object;
+        return Objects.equals(dateOfApplication, that.dateOfApplication);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dateOfApplication);
+    }
+
     public String repairAutomobile() {
         if (Objects.isNull(automobile)) {
             return "Автомобиль не найден!";

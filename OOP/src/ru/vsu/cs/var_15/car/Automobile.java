@@ -1,6 +1,7 @@
 package ru.vsu.cs.var_15.car;
 
 import java.awt.*;
+import java.util.Objects;
 
 public class Automobile {
     private String carBrand;
@@ -67,6 +68,19 @@ public class Automobile {
 
     public String startEngine() {
         return "Автомобиль запущен.";
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Automobile that = (Automobile) object;
+        return Objects.equals(carBrand, that.carBrand) && Objects.equals(WIN, that.WIN) && Objects.equals(carNumber, that.carNumber) && Objects.equals(color, that.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(carBrand, WIN, carNumber, color);
     }
 }
 

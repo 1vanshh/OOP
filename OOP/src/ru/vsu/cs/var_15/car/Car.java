@@ -9,7 +9,7 @@ public class Car extends Automobile{
     private static String autoType;
 
     {
-        System.out.println("Приехала легковая машина");
+        System.out.println("Приехала легковая машина.");
     }
 
     public Car(String carBrand, String WIN, String carNumber, Color color) {
@@ -43,5 +43,15 @@ public class Car extends Automobile{
     @Override
     public String startEngine() {
         return "Легковой автомобиль запущен.";
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        return super.equals(object);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

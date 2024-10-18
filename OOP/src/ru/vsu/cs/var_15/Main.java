@@ -17,20 +17,22 @@ public class Main {
         Automobile truck = new Truck("KAMAZ", "WVGZZZ5493275", "X001AM36", Color.RED);
         Application application = new Application(customer, new Date());
 
-        ArrayList<Automobile> list = new ArrayList<>();
-        list.add(car);
-        list.add(truck);
+//        ArrayList<Automobile> list = new ArrayList<>();
+//        list.add(car);
+//        list.add(truck);
+//
+//        System.out.println();
+//        for (Automobile automobile : list) {
+//            System.out.println(automobile.startEngine());
+//        }
+//
+//        System.out.println();
+//        System.out.println(application.repairAutomobile());
+//
+//        application.setAutomobile(truck);
+//
+//        System.out.println(application.repairAutomobile());
 
-        System.out.println();
-        for (Automobile automobile : list) {
-            System.out.println(automobile.startEngine());
-        }
-
-        System.out.println();
-        System.out.println(application.repairAutomobile());
-
-        application.setAutomobile(truck);
-
-        System.out.println(application.repairAutomobile());
+        System.out.println(car.equals(truck));
     }
 }

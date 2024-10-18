@@ -1,5 +1,7 @@
 package ru.vsu.cs.var_15;
 
+import java.util.Objects;
+
 public class Customer {
     private String name;
     private String surname;
@@ -53,6 +55,19 @@ public class Customer {
                 ", age=" + age +
                 ", gender=" + gender +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Customer customer = (Customer) object;
+        return Objects.equals(name, customer.name) && Objects.equals(surname, customer.surname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname);
     }
 
     public enum Gender {
