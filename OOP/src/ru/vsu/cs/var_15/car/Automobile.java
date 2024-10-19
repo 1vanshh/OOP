@@ -71,16 +71,16 @@ public class Automobile {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        Automobile that = (Automobile) object;
-        return Objects.equals(carBrand, that.carBrand) && Objects.equals(WIN, that.WIN) && Objects.equals(carNumber, that.carNumber) && Objects.equals(color, that.color);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Automobile that = (Automobile) o;
+        return Objects.equals(WIN, that.WIN);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(carBrand, WIN, carNumber, color);
+        return Objects.hash(WIN);
     }
 }
 

@@ -12,8 +12,9 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        Customer customer = new Customer("Ivan", "Shamaev", 20, Customer.Gender.MALE);
+        Customer customer = new Customer("Ivan", "Shamaev", 2020, 12345, 19, Customer.Gender.MALE);
         Automobile car = new Car("KIA", "1WX654ZYYXX", "X699VC136", Color.GRAY);
+        Automobile car1 = new Truck("KIA", "1WX654ZYYXX", "X699VC136", Color.GRAY);
         Automobile truck = new Truck("KAMAZ", "WVGZZZ5493275", "X001AM36", Color.RED);
         Application application = new Application(customer, new Date());
 
@@ -33,6 +34,6 @@ public class Main {
 //
 //        System.out.println(application.repairAutomobile());
 
-        System.out.println(car.equals(truck));
+        System.out.println(car1.equals(truck));
     }
 }

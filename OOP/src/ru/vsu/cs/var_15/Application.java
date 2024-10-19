@@ -56,16 +56,16 @@ public class Application {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        Application that = (Application) object;
-        return Objects.equals(dateOfApplication, that.dateOfApplication);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Application that = (Application) o;
+        return Objects.equals(customer, that.customer) && Objects.equals(automobile, that.automobile) && Objects.equals(dateOfApplication, that.dateOfApplication);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dateOfApplication);
+        return Objects.hash(customer, automobile, dateOfApplication);
     }
 
     public String repairAutomobile() {
