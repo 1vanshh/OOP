@@ -1,4 +1,4 @@
-package ru.vsu.cs.var_15.car;
+package ru.vsu.cs.var_15.classes.car;
 
 import java.awt.*;
 
@@ -32,11 +32,6 @@ public class Truck extends Automobile{
         return "Truck{" +
                 "maxWeight=" + maxPermissibleWeight +
                 '}' + super.toString();
-    }
-
-    @Override
-    public String repair() {
-        return "Грузовой автомобиль отремонтирован!";
     }
 
     @Override

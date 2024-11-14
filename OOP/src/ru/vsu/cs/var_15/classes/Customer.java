@@ -1,4 +1,4 @@
-package ru.vsu.cs.var_15;
+package ru.vsu.cs.var_15.classes;
 
 import java.util.Objects;
 

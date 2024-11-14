@@ -1,6 +1,6 @@
-package ru.vsu.cs.var_15;
+package ru.vsu.cs.var_15.classes;
 
-import ru.vsu.cs.var_15.car.Automobile;
+import ru.vsu.cs.var_15.classes.car.Automobile;
 
 import java.util.Date;
 import java.util.Objects;
@@ -68,10 +68,9 @@ public class Application {
         return Objects.hash(customer, automobile, dateOfApplication);
     }
 
-    public String repairAutomobile() {
+    public void repairAutomobile() {
         if (Objects.isNull(automobile)) {
-            return "Автомобиль не найден!";
+            return;
         }
-        return this.automobile.repair();
     }
 }

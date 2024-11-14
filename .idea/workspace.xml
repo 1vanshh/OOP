@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fa8518b-390e-4c76-b527-a1dfc0206844" name="Changes" comment="" />
+    <list default="true" id="2fa8518b-390e-4c76-b527-a1dfc0206844" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/OOP/src/ru/vsu/cs/var_15/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/ru/vsu/cs/var_15/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +40,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Ivan/Desktop/OOP/OOP",
+    "last_opened_file_path": "D:/ООП/OOP/OOP",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,6 +66,7 @@
       <workItem from="1729274912936" duration="941000" />
       <workItem from="1729275871090" duration="34000" />
       <workItem from="1729334371948" duration="12000" />
+      <workItem from="1730483376466" duration="14000" />
     </task>
     <servers />
   </component>

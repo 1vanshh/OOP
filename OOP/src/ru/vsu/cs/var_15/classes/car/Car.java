@@ -1,4 +1,4 @@
-package ru.vsu.cs.var_15.car;
+package ru.vsu.cs.var_15.classes.car;
 
 import java.awt.*;
 
@@ -33,11 +33,6 @@ public class Car extends Automobile{
         return "Car{" +
                 "drive='" + drive + '\'' +
                 '}' + super.toString();
-    }
-
-    @Override
-    public String repair() {
-        return "Легковой автомобиль отремонтирован!";
     }
 
     @Override
