@@ -1,5 +1,7 @@
 package ru.vsu.cs.var_15.classes;
 
+import ru.vsu.cs.var_15.exceptions.InvalidPassportDataException;
+
 import java.util.Objects;
 
 public class Customer {
@@ -10,11 +12,11 @@ public class Customer {
     private Integer age;
     private Gender gender;
 
-    public Customer(String name, String surname, int passportSeries, int passportNumber, Integer age, Gender gender) {
+    public Customer(String name, String surname, int passportSeries, int passportNumber, Integer age, Gender gender) throws InvalidPassportDataException {
         this.name = name;
         this.surname = surname;
-        this.passportSeries = passportSeries;
-        this.passportNumber = passportNumber;
+        setPassportSeries(passportSeries);
+        setPassportNumber(passportNumber);
         this.age = age;
         this.gender = gender;
     }
@@ -51,11 +53,17 @@ public class Customer {
         this.surname = surname;
     }
 
-    public void setPassportSeries(int passportSeries) {
+    public void setPassportSeries(int passportSeries) throws InvalidPassportDataException {
+        if (String.valueOf(passportSeries).length() != 4) {
+            throw new InvalidPassportDataException("Серия паспорта должна быть длинной 4 символа.");
+        }
         this.passportSeries = passportSeries;
     }
 
-    public void setPassportNumber(int passportNumber) {
+    public void setPassportNumber(int passportNumber) throws InvalidPassportDataException{
+        if (String.valueOf(passportNumber).length() != 6) {
+            throw new InvalidPassportDataException("Номер паспорта должен быть длинной 6 символа.");
+        }
         this.passportNumber = passportNumber;
     }
 

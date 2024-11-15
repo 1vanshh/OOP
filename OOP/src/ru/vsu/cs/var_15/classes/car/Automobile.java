@@ -1,6 +1,5 @@
 package ru.vsu.cs.var_15.classes.car;
 
-import ru.vsu.cs.var_15.interfaces.AutomobileRepairing;
 import ru.vsu.cs.var_15.interfaces.Repairable;
 
 import java.awt.*;
@@ -10,15 +9,15 @@ import java.util.Objects;
 
 public class Automobile implements Repairable {
     private String carBrand;
-    private String WIN;
+    private String VIN;
     private String carNumber;
     private Color color;
     private List<Issue> issues = new ArrayList<>();
     private double totalRepairCost = 0;
 
-    public Automobile(String carBrand, String WIN, String carNumber, Color color) {
+    public Automobile(String carBrand, String VIN, String carNumber, Color color) {
         this.carBrand = carBrand;
-        this.WIN = WIN;
+        this.VIN = VIN;
         this.carNumber = carNumber;
         this.color = color;
     }
@@ -31,8 +30,8 @@ public class Automobile implements Repairable {
         return carBrand;
     }
 
-    public String getWIN() {
-        return WIN;
+    public String getVIN() {
+        return VIN;
     }
 
     public String getCarNumber() {
@@ -60,8 +59,8 @@ public class Automobile implements Repairable {
         this.carBrand = carBrand;
     }
 
-    public void setWIN(String WIN) {
-        this.WIN = WIN;
+    public void setVIN(String VIN) {
+        this.VIN = VIN;
     }
 
     public void setCarNumber(String carNumber) {
@@ -76,7 +75,7 @@ public class Automobile implements Repairable {
     public String toString() {
         return "Automobile{" +
                 "carBrand='" + carBrand + '\'' +
-                ", WIN='" + WIN + '\'' +
+                ", WIN='" + VIN + '\'' +
                 ", carNumber='" + carNumber + '\'' +
                 ", color=" + color +
                 '}';
@@ -87,12 +86,12 @@ public class Automobile implements Repairable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Automobile that = (Automobile) o;
-        return Objects.equals(WIN, that.WIN);
+        return Objects.equals(VIN, that.VIN);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(WIN);
+        return Objects.hash(VIN);
     }
 
     @Override

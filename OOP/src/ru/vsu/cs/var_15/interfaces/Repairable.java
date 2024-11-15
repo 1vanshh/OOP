@@ -1,6 +1,7 @@
 package ru.vsu.cs.var_15.interfaces;
 
 import ru.vsu.cs.var_15.classes.car.Automobile;
+import ru.vsu.cs.var_15.enums.RepairType;
 
 import java.util.List;
 
