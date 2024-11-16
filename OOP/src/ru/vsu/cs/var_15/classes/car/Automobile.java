@@ -1,5 +1,6 @@
 package ru.vsu.cs.var_15.classes.car;
 
+import ru.vsu.cs.var_15.interfaces.AutomobileRepairing;
 import ru.vsu.cs.var_15.interfaces.Repairable;
 
 import java.awt.*;
@@ -97,7 +98,17 @@ public class Automobile implements Repairable {
     @Override
     public void addIssue(String issue, double estimateCost) {
         issues.add(new Issue(issue, estimateCost));
-        totalRepairCost += estimateCost;
+
+        AutomobileRepairing repairingCoefficient = automobile -> {
+            if (automobile.getCarBrand().contains("VAZ")) {
+                return 1.0;
+            } else {
+                return 1.3;
+            }
+        };
+
+        double coefficient = repairingCoefficient.repairCoefficient(this);
+        totalRepairCost += estimateCost * coefficient;
     }
 
     @Override
