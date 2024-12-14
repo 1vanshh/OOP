@@ -1,5 +1,7 @@
 package ru.vsu.cs.var_15.classes.car;
 
+import ru.vsu.cs.var_15.classes.Customer;
+
 import java.awt.*;
 
 public class Car extends Automobile{
@@ -12,8 +14,8 @@ public class Car extends Automobile{
         System.out.println("Приехала легковая машина.");
     }
 
-    public Car(String carBrand, String WIN, String carNumber, Color color) {
-        super(carBrand, WIN, carNumber, color);
+    public Car(Customer owner, String carBrand, String WIN, String carNumber, Color color) {
+        super(owner ,carBrand, WIN, carNumber, color);
     }
 
     static {

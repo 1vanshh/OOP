@@ -1,5 +1,6 @@
 package ru.vsu.cs.var_15.classes.car;
 
+import ru.vsu.cs.var_15.classes.Customer;
 import ru.vsu.cs.var_15.interfaces.AutomobileRepairing;
 import ru.vsu.cs.var_15.interfaces.Repairable;
 
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Automobile implements Repairable {
+    private Customer owner;
     private String carBrand;
     private String VIN;
     private String carNumber;
@@ -16,7 +18,8 @@ public class Automobile implements Repairable {
     private List<Issue> issues = new ArrayList<>();
     private double totalRepairCost = 0;
 
-    public Automobile(String carBrand, String VIN, String carNumber, Color color) {
+    public Automobile(Customer owner, String carBrand, String VIN, String carNumber, Color color) {
+        this.owner = owner;
         this.carBrand = carBrand;
         this.VIN = VIN;
         this.carNumber = carNumber;
@@ -108,7 +111,12 @@ public class Automobile implements Repairable {
         };
 
         double coefficient = repairingCoefficient.repairCoefficient(this);
+
         totalRepairCost += estimateCost * coefficient;
+
+        if (owner.getAge().getYears() % 10 == 0 || owner.getAge().getYears() > 65) {
+            totalRepairCost *= 0.4;
+        }
     }
 
     @Override

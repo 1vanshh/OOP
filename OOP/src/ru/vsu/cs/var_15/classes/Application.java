@@ -2,23 +2,24 @@ package ru.vsu.cs.var_15.classes;
 
 import ru.vsu.cs.var_15.classes.car.Automobile;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Date;
 import java.util.Objects;
 
 public class Application {
     private Customer customer;
-
     private Automobile automobile;
+    private LocalDate dateOfApplication;
 
-    private Date dateOfApplication;
-
-    public Application(Customer customer, Automobile automobile, Date dateOfApplication) {
+    public Application(Customer customer, Automobile automobile, LocalDate dateOfApplication) {
         this.customer = customer;
         this.automobile = automobile;
-        this.dateOfApplication = dateOfApplication;
+        setDateOfApplication(dateOfApplication);
     }
 
-    public Application(Customer customer, Date dateOfApplication) {
+    public Application(Customer customer, LocalDate dateOfApplication) {
         this(customer, null, dateOfApplication);
     }
 
@@ -30,7 +31,7 @@ public class Application {
         return automobile;
     }
 
-    public Date getDateOfApplication() {
+    public LocalDate getDateOfApplication() {
         return dateOfApplication;
     }
 
@@ -42,8 +43,13 @@ public class Application {
         this.automobile = automobile;
     }
 
-    public void setDateOfApplication(Date dateOfApplication) {
+    public void setDateOfApplication(LocalDate dateOfApplication) {
         this.dateOfApplication = dateOfApplication;
+    }
+
+    public String getFormattedDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return dateOfApplication.format(formatter);
     }
 
     @Override
@@ -51,7 +57,7 @@ public class Application {
         return "Application{" +
                 "customer=" + customer +
                 ", automobile=" + automobile +
-                ", dateOfApplication=" + dateOfApplication +
+                ", dateOfApplication=" + getFormattedDate() +
                 '}';
     }
 

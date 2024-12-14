@@ -2,6 +2,9 @@ package ru.vsu.cs.var_15.classes;
 
 import ru.vsu.cs.var_15.exceptions.InvalidPassportDataException;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 public class Customer {
@@ -9,16 +12,16 @@ public class Customer {
     private String surname;
     private int passportSeries;
     private int passportNumber;
-    private Integer age;
     private Gender gender;
+    private LocalDate birthday;
 
-    public Customer(String name, String surname, int passportSeries, int passportNumber, Integer age, Gender gender) throws InvalidPassportDataException {
+    public Customer(String name, String surname, int passportSeries, int passportNumber, Gender gender, LocalDate birthday) throws InvalidPassportDataException {
         this.name = name;
         this.surname = surname;
         setPassportSeries(passportSeries);
         setPassportNumber(passportNumber);
-        this.age = age;
         this.gender = gender;
+        this.birthday = birthday;
     }
 
     public String getName() {
@@ -37,12 +40,20 @@ public class Customer {
         return passportNumber;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
     public Gender getGender() {
         return gender;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public Period getAge() {
+        LocalDate today = LocalDate.now();
+
+        Period p = Period.between(birthday, today);
+
+        return p;
     }
 
     public void setName(String name) {
@@ -51,6 +62,10 @@ public class Customer {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 
     public void setPassportSeries(int passportSeries) throws InvalidPassportDataException {
@@ -67,10 +82,6 @@ public class Customer {
         this.passportNumber = passportNumber;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
     public void setGender(Gender gender) {
         this.gender = gender;
     }
@@ -82,8 +93,8 @@ public class Customer {
                 ", surname='" + surname + '\'' +
                 ", passportSeries=" + passportSeries +
                 ", passportNumber=" + passportNumber +
-                ", age=" + age +
                 ", gender=" + gender +
+                ", birthday=" + birthday +
                 '}';
     }
 
