@@ -10,9 +10,9 @@ public class Truck extends Automobile{
 
     private static String autoType;
 
-    {
-        System.out.println("Приехала грузовая машина.");
-    }
+//    {
+//        System.out.println("Приехала грузовая машина.");
+//    }
 
     public Truck(Customer owner, String carBrand, String WIN, String carNumber, Color color) {
         super(owner ,carBrand, WIN, carNumber, color);
